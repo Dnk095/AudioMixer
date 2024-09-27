@@ -14,6 +14,9 @@ public class AudioPanel : MonoBehaviour
     [SerializeField] private VolumeChanger _backGroundSlider;
     [SerializeField] private Toggle _mute;
 
+    private float _minVolume = -80;
+    private float _maxVolume = 0;
+
     private void OnEnable()
     {
         _soundSlider.OnVolumeChange += ChangeVolume;
@@ -33,15 +36,15 @@ public class AudioPanel : MonoBehaviour
     public void Mute(bool enabled)
     {
         if (enabled)
-            _mixer.audioMixer.SetFloat(MasterVolume, 0);
+            _mixer.audioMixer.SetFloat(MasterVolume, _maxVolume);
         else
-            _mixer.audioMixer.SetFloat(MasterVolume, -80);
+            _mixer.audioMixer.SetFloat(MasterVolume, _minVolume);
     }
 
     private void ChangeVolume(string name, float volume)
     {
         if (volume <= 0.02)
-            _mixer.audioMixer.SetFloat(name, -80);
+            _mixer.audioMixer.SetFloat(name, _minVolume);
         else
             _mixer.audioMixer.SetFloat(name, Mathf.Log10(volume) * 20);
     }
