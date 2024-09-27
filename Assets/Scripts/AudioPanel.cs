@@ -10,16 +10,10 @@ public class AudioPanel : MonoBehaviour
 
     public void Mute(bool enabled)
     {
-        if (_isMute == false)
-        {
-            _isMute = true;
+        if (enabled)
             _mixer.audioMixer.SetFloat("MasterVolume", 0);
-        }
         else
-        {
-            _isMute = false;
             _mixer.audioMixer.SetFloat("MasterVolume", -80);
-        }
     }
 
 
