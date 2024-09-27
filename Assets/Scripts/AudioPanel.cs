@@ -12,12 +12,22 @@ public class AudioPanel : MonoBehaviour
     [SerializeField] private VolumeChanger _soundSlider;
     [SerializeField] private VolumeChanger _masterSlider;
     [SerializeField] private VolumeChanger _backGroundSlider;
+    [SerializeField] private Toggle _mute;
 
     private void OnEnable()
     {
         _soundSlider.OnVolumeChange += ChangeVolume;
         _masterSlider.OnVolumeChange += ChangeVolume;
         _backGroundSlider.OnVolumeChange += ChangeVolume;
+        _mute.onValueChanged.AddListener(Mute);
+    }
+
+    private void OnDisable()
+    {
+        _soundSlider.OnVolumeChange -= ChangeVolume;
+        _masterSlider.OnVolumeChange -= ChangeVolume;
+        _backGroundSlider.OnVolumeChange -= ChangeVolume;
+        _mute.onValueChanged.RemoveListener(Mute);
     }
 
     public void Mute(bool enabled)
