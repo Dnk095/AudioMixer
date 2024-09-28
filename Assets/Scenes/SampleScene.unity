@@ -1306,7 +1306,6 @@ GameObject:
   - component: {fileID: 701898291}
   - component: {fileID: 701898293}
   - component: {fileID: 701898292}
-  - component: {fileID: 701898294}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1379,23 +1378,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701898290}
   m_CullTransparentMesh: 1
---- !u!114 &701898294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701898290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 293826266a16b5d44b8e49ba66396757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
-  _soundSlider: {fileID: 1883486774}
-  _masterSlider: {fileID: 1765423314}
-  _backGroundSlider: {fileID: 1591831463}
-  _mute: {fileID: 1521255818}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,6 +2629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb9c5a7328fe4e4f957027854859219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
 --- !u!1 &1543278320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,8 +2966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165515cffe378e24995b6f107d689098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
   _sliderName: BackGroundVolume
+  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
+  _muteButton: {fileID: 1521255818}
 --- !u!1 &1646728189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,8 +3412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165515cffe378e24995b6f107d689098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
   _sliderName: MasterVolume
+  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
+  _muteButton: {fileID: 1521255818}
 --- !u!1 &1819010045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,8 +3596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165515cffe378e24995b6f107d689098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
   _sliderName: SoundVolume
+  _mixer: {fileID: 24300002, guid: 738787822f68668408f980314ec46b75, type: 2}
+  _muteButton: {fileID: 1521255818}
 --- !u!1 &1920917039
 GameObject:
   m_ObjectHideFlags: 0
