@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -13,8 +12,6 @@ public class VolumeChanger : MonoBehaviour
     private Slider _slider;
 
     private float currentVolume = 0;
-
-    public event Action<string, float> OnVolumeChange;
 
     private void OnEnable()
     {
@@ -50,6 +47,6 @@ public class VolumeChanger : MonoBehaviour
 
     private void OnUnMute()
     {
-        ChangeVolume(currentVolume);
+        _mixer.audioMixer.SetFloat(_sliderName, Mathf.Log10(currentVolume) * 20);
     }
 }
