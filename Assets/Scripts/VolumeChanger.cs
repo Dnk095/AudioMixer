@@ -50,6 +50,6 @@ public class VolumeChanger : MonoBehaviour
 
     private void OnUnMute()
     {
-        _mixer.audioMixer.SetFloat(_sliderName, Mathf.Log10(currentVolume) * 20);
+        ChangeVolume(currentVolume);
     }
 }
