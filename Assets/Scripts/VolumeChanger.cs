@@ -11,7 +11,7 @@ public class VolumeChanger : MonoBehaviour
 
     private Slider _slider;
 
-    private float currentVolume = 0;
+    private float currentVolume = 1;
 
     private void OnEnable()
     {
@@ -47,6 +47,6 @@ public class VolumeChanger : MonoBehaviour
 
     private void OnUnMute()
     {
-        _mixer.audioMixer.SetFloat(_sliderName, Mathf.Log10(currentVolume) * 20);
+        ChangeVolume(currentVolume);
     }
 }
